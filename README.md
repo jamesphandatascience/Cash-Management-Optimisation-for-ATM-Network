@@ -32,6 +32,10 @@ The dataset has **22,000 daily records**, each with the day's cash withdrawals (
    - **Cluster 3:** not downtown
 
    Splitting the data this way removed the multicollinearity and let each segment have its own relationships.
+
+![EDA: withdrawals against shop density and nearby ATMs, coloured by segment](images/eda_clusters.png)
+
+*Left: shop density separates downtown ATMs from the rest, and holiday demand at shopping centres forms its own high cluster. Right: pooled across all ATMs, more nearby ATMs appear to **increase** withdrawals (+5.6 per extra ATM), but within every segment the effect **reverses** (about −1.0 per extra ATM), because nearby machines share the same demand. This reversal (Simpson's paradox) is why a single global model misleads, and why the final model is fitted per segment.*
 3. **Modelling.** We compared regularised and non-linear approaches, using cross-validated test MSE as the main metric:
    - Ridge, LASSO and Elastic Net with polynomial and interaction terms
    - LASSO fitted separately to K-Means clusters (4 clusters, chosen by silhouette score)
