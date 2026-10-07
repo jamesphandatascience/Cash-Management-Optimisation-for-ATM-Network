@@ -65,6 +65,7 @@ The segmented OLS model was chosen because it had the lowest error and is still 
 | `ElasticNet.ipynb` | Elastic Net with cross-validated alpha and L1 ratio |
 | `GAMs.ipynb` | Generalised Additive Models for interpreting each feature's effect |
 | `Cash Management Optimisation Report.pdf` | Full report: EDA, methodology, results and limitations |
+| `ATM_sample.csv`, `ATM_test.csv` | ATM withdrawal dataset (22,000 daily records) |
 
 ## Running the notebooks
 
@@ -74,7 +75,7 @@ Requires Python 3 with `pandas`, `numpy`, `scikit-learn`, `statsmodels`, `matplo
 pip install pandas numpy scikit-learn statsmodels matplotlib seaborn pygam
 ```
 
-The notebooks read `ATM_sample.csv` (and `ATM_test.csv` for the clustered OLS model) from the repository root. The course dataset is not included in this repository.
+The notebooks read `ATM_sample.csv` (and `ATM_test.csv` for the clustered OLS model) from the repository root. Both files are included: 22,000 daily records with the six features above and the `Withdraw` target.
 
 ## Limitations and next steps
 
